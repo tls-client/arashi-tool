@@ -15,9 +15,7 @@ function tokenalivecheck(){
     removeOptions(tokenlist);
     removeOptions(guildlist);
     removeOptions(channellist);
-    tokens.forEach(token => {
-        addlog(`トークン "${token}" の有無を確認します。`);
-        
+    tokens.forEach(token => {        
         fetch(
             "https://discord.com/api/v10/users/@me",
             {
@@ -29,7 +27,7 @@ function tokenalivecheck(){
             }
         ).then((response) => {
             if (response.status == 200) {
-                addlog(`${token}: トークンが有効です`);
+                addlog(`トークンが有効です`);
                 response.json().then((json) => {
                     tokentouser[token] = json;
 
@@ -40,7 +38,7 @@ function tokenalivecheck(){
                 })
             }else{
                 tokentouser[token] = {};
-                addlog(`${token}: トークンが無効です: ${response.status}`);
+                addlog(`トークンが無効です: ${response.status}`);
             }
         });
     });
