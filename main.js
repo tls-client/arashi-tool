@@ -38,7 +38,7 @@ function tokenalivecheck(){
                 })
             }else{
                 tokentouser[token] = {};
-                addlog(`トークンが無効です: ${response.status}`);
+                addlog(`トークンが無効です`);
             }
         });
     });
@@ -74,7 +74,7 @@ function getservers(){
                 })
             })
         }else{
-            addlog(`ギルド一覧の取得に失敗しました: ${response.status}`);
+            addlog(`ギルド一覧の取得に失敗しました`);
         }
     });
 }
@@ -113,7 +113,7 @@ function getchannels(){
                 })
             })
         }else{
-            addlog(`チャンネル一覧の取得に失敗しました: ${response.status}`);
+            addlog(`チャンネル一覧の取得に失敗しました`);
         }
     });
 }
@@ -157,10 +157,10 @@ function sendmessage() {
                 addlog(`送信済み: ${json["id"]} (${json["timestamp"]})`);
             });
         } else {
-            addlog(`メッセージの送信に失敗しました: ${response.status}`);
+            addlog(`メッセージの送信に失敗しました`);
         }
     }).catch((error) => {
-        addlog(`メッセージの送信時にエラーが発生しました: ${error}`);
+        addlog(`メッセージの送信時にエラーが発生しました`);
     });
 }
 
