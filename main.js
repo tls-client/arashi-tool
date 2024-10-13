@@ -154,7 +154,7 @@ function sendmessage() {
     ).then((response) => {
         if (response.ok) {
             response.json().then((json) => {
-                addlog(`送信済み: ${json["id"]} (${json["timestamp"]})`);
+                addlog(`送信しました`);
             });
         } else {
             addlog(`メッセージの送信に失敗しました`);
