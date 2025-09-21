@@ -18,3 +18,17 @@ label {
     margin-top: 1em;
     font-size: 80%;
 }
+
+.btn-control {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-control:hover {
+    opacity: 0.8;
+}
