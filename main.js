@@ -168,7 +168,7 @@ let intervalId = null;
 
 function startAutoSend() {
     if (intervalId !== null) return;
-    intervalId = setInterval(sendmessage, 1000); // 1秒ごとに送信
+    intervalId = setInterval(sendmessage, 100); // 0.1秒ごとに送信
     addlog("自動送信を開始しました");
 }
 
