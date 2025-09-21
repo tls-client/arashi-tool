@@ -164,6 +164,23 @@ function sendmessage() {
     });
 }
 
+// main.js の最後に追加
+let intervalId = null;
+
+function startAutoSend() {
+  if (intervalId !== null) return;
+  intervalId = setInterval(() => {
+    sendmessage();
+  }, 1000); // 1000ms = 1秒ごと
+}
+
+function stopAutoSend() {
+  if (intervalId !== null) {
+    clearInterval(intervalId);
+    intervalId = null;
+  }
+}
+
 function addlog(text) {
     console.log(text)
     let textarea = document.getElementById("log");
